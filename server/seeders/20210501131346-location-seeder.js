@@ -5,7 +5,7 @@ const fs = require('fs');
 
 var querryParameter = ()=> new Promise( resolve =>{
   let data = [];
-    fs.createReadStream("./data/locations.csv")
+    fs.createReadStream("./server/data/locations.csv")
     .pipe(csv())
     .on('data', (row) => {
       data.push(
