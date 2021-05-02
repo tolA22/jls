@@ -38,7 +38,7 @@ function ProductsComponent(){
         setProductNumber(tempProductNumber);
     }
 
-    const updateLocation = (index,quantity,type) => {
+    const updateLocation = async (index,quantity,type) => {
         try{
             setSpinner(true);
 
@@ -63,10 +63,9 @@ function ProductsComponent(){
         value = (value).toString()
         
         //send requiest
-        let res = updateLocationQuantity(location.id,value);
+        let res = await updateLocationQuantity(location.id,value);
 
         // update the locations object
-        console.log(res.data)
         let tempLocations = [...locations]
         tempLocations[index].quantity = (value);
         setLocations(tempLocations);
