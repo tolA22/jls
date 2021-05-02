@@ -4,7 +4,6 @@ const {Op} = require('sequelize');
 
 const pagination = async (req,res) => {
     try{
-        return res.status(200).json({message:"fetched"})
         let currentPage = parseInt(req.query.currentPage);
         let coreNumber = decodeURIComponent(req.query.coreNumber);
         const LIMIT_NUMBER = 25;
