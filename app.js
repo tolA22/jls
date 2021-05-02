@@ -5,6 +5,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet')
+const path = require('path');
 // Set up the express app
 const app = express();
 
