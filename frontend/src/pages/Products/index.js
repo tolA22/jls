@@ -38,6 +38,12 @@ function ProductsComponent(){
         setProductNumber(tempProductNumber);
     }
 
+    /**
+     * Call the update request api and updates the changes on success
+     * @param {*} index index of the location in the locations array to be updated
+     * @param {*} quantity new quantity to be updated
+     * @param {*} type  type of operation to be performed i.e addition or subtraction
+     */
     const updateLocation = async (index,quantity,type) => {
         try{
             setSpinner(true);
@@ -83,22 +89,37 @@ function ProductsComponent(){
         }
     }
 
+    /**
+     * Updates the current page value
+     * @param {*} e current pagination item element
+     */
     const changeItem = (e) => {
         setCurrent(e.target.innerText)
     }
 
+    /**
+     * Updates the current page value
+     */
     const prevItem = () => {
         if(current -1 >= 1){
             setCurrent(current-1)
         }
     }
 
+    /**
+     * updates the current page value
+     */
     const nextItem = () => {
         if(current + 1 <= lastPage){
             setCurrent(parseInt(current)+1)
         }
     }
 
+    /**
+     * fetches location details associated with a particular core_number
+     * @param {*} coreNumber core_number to be queried
+     * @param {*} index index of the product in the data array to enable local updates per session
+     */
     const viewProduct = async (coreNumber,index) => {
         try{
             setSpinner(true);
@@ -138,6 +159,11 @@ function ProductsComponent(){
         }
     } 
 
+    /**
+     * Fetches the paginated list of products and update the lastPage and total Pages
+     * @param {*} tcurrent currentpage value
+     * @param {*} tproductNumber optional- product_number
+     */
     const search = async (tcurrent=current,tproductNumber=productNumber) => {
         try{
             setSpinner(true);

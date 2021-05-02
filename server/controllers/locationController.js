@@ -2,7 +2,11 @@
 const Location = require('../models').Location;
 
 
-
+/**
+ * fetches all locations associated with a product_number
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getLocations = async (req,res) => {
     try{
         let id = decodeURIComponent(req.params.id);
@@ -33,6 +37,9 @@ const getLocations = async (req,res) => {
     }
 }
 
+/**
+ * update the quantity associated with a location and the product_number
+ */
 const updateQuantity = async (req,res) => {
     try{
         let id = (req.params.id);

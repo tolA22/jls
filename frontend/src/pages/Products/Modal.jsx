@@ -6,6 +6,11 @@ import UpdateFormComponent from './UpdateForm';
 
 function ModalComponent(props){
 
+    /**
+     * Calculates the total quantities in the locations array
+     * @param {*} data locations object
+     * @returns 
+     */
     function calculateSum(data){
         let summ = 0
         for(var i = 0; i < data.length;i++){

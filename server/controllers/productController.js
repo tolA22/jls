@@ -1,7 +1,11 @@
 const Product = require('../models').Product;
 const {Op} = require('sequelize');
 
-
+/**
+ * returns a paginated response of all products in the inventory
+ * @param {*} req , currentPage - current page number, coreNumber - product's core number for search (optional) 
+ * @param {*} res 
+ */
 const pagination = async (req,res) => {
     try{
         let currentPage = parseInt(req.query.currentPage);
