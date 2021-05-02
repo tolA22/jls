@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Require our routes into the application.
-require('./routes')(app);
+require('./server/routes')(app);
 
 // Serve REACT APP
 if (process.env.NODE_ENV !== "development") {
