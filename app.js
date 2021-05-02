@@ -19,14 +19,14 @@ require('./routes')(app);
 
 // Serve REACT APP
 if (process.env.NODE_ENV !== "development") {
-  app.use(express.static("frontend/build"));
+  app.use(express.static(path.join(__dirname,"frontend/build")));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 }
 
-app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the beginning of nothingness.',
-}));
+// app.get('*', (req, res) => res.status(200).send({
+//   message: 'Welcome to the beginning of nothingness.',
+// }));
 
 module.exports = app;
