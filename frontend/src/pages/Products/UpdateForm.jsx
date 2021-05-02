@@ -20,14 +20,14 @@ function UpdateFormComponent(props){
       }else{
         setValidated(true);
         props.updateLocation(formLocationIndex,formQuantity,formOperation);
-        //   console.log(formLocationIndex,formOperation,formQuantity)
+        
 
       }
   
     };
 
     const handleFormLocation = (e) => {
-        console.log(e)
+        
         setFormLocationIndex(e.target.value)
 
     }

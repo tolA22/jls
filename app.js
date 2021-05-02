@@ -26,7 +26,7 @@ const corsOptions = {
 
 // app.use(helmet());
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 
 // Log requests to the console.
